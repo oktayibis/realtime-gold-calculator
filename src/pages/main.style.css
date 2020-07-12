@@ -1,0 +1,16 @@
+.main-container {
+    margin: auto 2%;
+    padding: 1%;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px 5px rgb(100, 100, 100);
+    background-color: white;
+}
+
+.total-gold-text {
+    color:  #e8505b;
+    text-align: center;
+}
+
+.total-gold-price {
+	color: #14b1ab;
+}
