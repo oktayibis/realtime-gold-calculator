@@ -2,20 +2,14 @@ import React, { useState, useContext } from "react";
 import "./input.style.css";
 import TotalContext from "../context/total.context";
 import { Add, Minus } from "./images/icons.component";
-const Input = ({ gold }) => {
+const Input = ({ name, price }) => {
 	const [value, setValue] = useState(0);
-	const { totalHelper, calculate } = useContext(TotalContext);
+	const { totalHelper } = useContext(TotalContext);
 	const [totalPrice, setTotalPrice] = totalHelper;
-	let total = value * gold.price;
-	// const handleClick = () => {
-	// 	console.log("onclick");
-	// 	let payload = value * gold.price;
-	// 	console.log("list", totalPrice);
-	// 	setTotalPrice(totalPrice.concat(payload))
-	// }
+	let total = value * price;
 	const plus = () => {
 		setValue(value + 1);
-		let payload = totalPrice + gold.price;
+		let payload = totalPrice + price;
 		setTotalPrice(payload);
 	};
 
@@ -24,7 +18,7 @@ const Input = ({ gold }) => {
 			setValue(0);
 		} else {
 			setValue(value - 1);
-			let payload = totalPrice - gold.price;
+			let payload = totalPrice - price;
 			setTotalPrice(payload);
 		}
 	};
@@ -34,17 +28,17 @@ const Input = ({ gold }) => {
 			<div className="input-container">
 				<div className="input-label-container">
 					<p className="input-label" id="label">
-						{gold.name}
-						<span className="price">{gold.price}</span>
+						{name}
+						<span className="price">{price}</span>
 					</p>
 				</div>
 
-				<button onClick={() => plus()} className="input-plus">
-					+
+				<button onClick={() => plus()} className="input-icon">
+					{Add}
 				</button>
 				<input className="input" type="number" min={0} value={value} />
-				<button onClick={() => minus()} className="input-minus">
-					-
+				<button onClick={() => minus()} className="input-icon">
+					{Minus}
 				</button>
 				<div className="display-result">
 					<p>

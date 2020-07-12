@@ -4,17 +4,14 @@ export const Add = (
 	<svg
 		version="1.0"
 		xmlns="http://www.w3.org/2000/svg"
-		width="1280.000000pt"
-		height="1280.000000pt"
+		width="100%"
+		height="100%"
 		viewBox="0 0 1280.000000 1280.000000"
 		preserveAspectRatio="xMidYMid meet"
 	>
-		<metadata>
-			Created by potrace 1.15, written by Peter Selinger 2001-2017
-		</metadata>
 		<g
 			transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)"
-			fill="#000000"
+			fill="#74d4c0"
 			stroke="none"
 		>
 			<path
@@ -50,17 +47,14 @@ export const Minus = (
 	<svg
 		version="1.0"
 		xmlns="http://www.w3.org/2000/svg"
-		width="1280.000000pt"
-		height="1280.000000pt"
+		width="100%"
+		height="100%"
 		viewBox="0 0 1280.000000 1280.000000"
 		preserveAspectRatio="xMidYMid meet"
 	>
-		<metadata>
-			Created by potrace 1.15, written by Peter Selinger 2001-2017
-		</metadata>
 		<g
 			transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)"
-			fill="#000000"
+			fill="#e8505b"
 			stroke="none"
 		>
 			<path

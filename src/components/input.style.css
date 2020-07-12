@@ -45,33 +45,13 @@ button {
 	outline: none;
 }
 
-.input-minus {
-	font-weight: bold;
-	font-size: 1rem;
-	border-radius: 50%;
+.input-icon {
+	margin: auto 10px;
 	width: 2rem;
-	height: 100%;
-	color: #e8505b;
-	border: 1px solid #e8505b;
-	margin: 0.5rem;
 }
-.input-minus:hover {
-	background-color: #ffe9eb;
-	cursor: pointer;
-}
-
-.input-plus {
-	font-weight: bold;
-	font-size: 1rem;
-	border-radius: 50%;
-	width: 2rem;
-	height: 100%;
-	color: #14b1ab;
-	border: 1px solid #14b1ab;
-	margin: auto 0.5rem;
-}
-.input-plus:hover {
+.input-icon:hover {
 	background-color: #d7fffe;
+	border-radius: 50%;
 	cursor: pointer;
 }
 

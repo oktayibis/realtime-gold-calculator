@@ -2,18 +2,31 @@ import React, { useState } from "react";
 
 import TotalContext from "./total.context";
 
-const TotalProvider = ({ children }) => {
-const [totalPrice, setTotalPrice] = useState(0)
+const API_URL = "https://api.collectapi.com/economy/goldPrice";
+const API_KEY = "apikey 5Rhb0GyJKN52GGRC8vgxoi:5laVnsyYDGBN6pvQX9Eh8C";
 
-const calculate = () => {
-	const reducer = (accumulator, currentValue) => accumulator + currentValue;
-	return totalPrice.reduce(reducer, 0)
-}
+const TotalProvider = ({ children }) => {
+	const [totalPrice, setTotalPrice] = useState(0);
+	const [goldPriceList, setGoldPriceList] = useState({list: [], isLoaded: false})
+	const getRealData = async () => {
+		fetch(API_URL, {
+			method: "GET",
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: API_KEY,
+			},
+		})
+		.then(response => response.json())
+		.then(data => setGoldPriceList({list:data.result, isLoaded:true}))
+		.catch(error => console.log(error.message))
+	};
+
 	return (
 		<TotalContext.Provider
 			value={{
 				totalHelper: [totalPrice, setTotalPrice],
-				calculate: calculate
+				getRealData:getRealData,
+				goldPriceList:goldPriceList
 			}}
 		>
 			{children}
