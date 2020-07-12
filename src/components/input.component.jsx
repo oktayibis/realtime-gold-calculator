@@ -23,6 +23,8 @@ const Input = ({ name, price }) => {
 		}
 	};
 
+	
+
 	return (
 		<React.Fragment>
 			<div className="input-container">
@@ -36,7 +38,7 @@ const Input = ({ name, price }) => {
 				<button onClick={() => plus()} className="input-icon">
 					{Add}
 				</button>
-				<input className="input" type="number" min={0} value={value} />
+				<input className="input" type="number" min={0} value={value} onChange={(e)=>setValue(e.target.value)} />
 				<button onClick={() => minus()} className="input-icon">
 					{Minus}
 				</button>
