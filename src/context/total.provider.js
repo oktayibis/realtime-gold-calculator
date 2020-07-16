@@ -22,7 +22,7 @@ const TotalProvider = ({ children }) => {
 			},
 		})
 			.then((response) => response.json())
-			.then((data) => setGoldPriceList({ list: data.result.slice(0,4), isLoaded: true }))
+			.then((data) => setGoldPriceList({ list: data.result.slice(0,6), isLoaded: true }))
 			.catch((error) => console.log(error.message));
 	};
 
