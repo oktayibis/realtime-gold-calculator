@@ -30,7 +30,7 @@ const TotalProvider = ({ children }) => {
 
   const getTotalPrice = () => {
     let total = totalList.reduce((acc, num) => acc + num, 0);
-    return total;
+    return total.toFixed(2);
   };
 
   const addNumber = (number, index) => {

@@ -23,6 +23,13 @@ const Input = ({ name, price, index }) => {
     }
   };
 
+  const handleChange = (e) => {
+    e.preventDefault();
+    setValue(e.target.value);
+    let payload = price * e.target.value;
+    addNumber(payload, index);
+  };
+
   React.useEffect(() => {
     addNumber(0, index);
   }, []);
@@ -45,7 +52,7 @@ const Input = ({ name, price, index }) => {
           type="number"
           min={0}
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={(e) => handleChange(e)}
         />
         <button onClick={() => minus()} className="input-icon">
           {Minus}
