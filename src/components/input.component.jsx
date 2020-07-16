@@ -2,15 +2,15 @@ import React, { useState, useContext } from "react";
 import "./input.style.css";
 import TotalContext from "../context/total.context";
 import { Add, Minus } from "./images/icons.component";
-const Input = ({ name, price }) => {
+const Input = ({ name, price,index }) => {
 	const [value, setValue] = useState(0);
-	const { totalHelper } = useContext(TotalContext);
-	const [totalPrice, setTotalPrice] = totalHelper;
+	const {  addNumber } = useContext(TotalContext);
+	//const [totalPrice, setTotalPrice] = totalHelper;
 	let total = value * price;
 	const plus = () => {
 		setValue(value + 1);
-		let payload = totalPrice + price;
-		setTotalPrice(payload);
+		let payload = total + price;
+		addNumber(payload,index);
 	};
 
 	const minus = () => {
@@ -18,12 +18,14 @@ const Input = ({ name, price }) => {
 			setValue(0);
 		} else {
 			setValue(value - 1);
-			let payload = totalPrice - price;
-			setTotalPrice(payload);
+			let payload = total - price;
+			addNumber(payload,index);
 		}
 	};
 
-	
+React.useEffect(()=> {
+	addNumber(0, index)
+}, [])
 
 	return (
 		<React.Fragment>

@@ -6,8 +6,8 @@ import "./main.style.css"
 
 const MainPage = () => {
 
-    const {totalHelper, getRealData, goldPriceList} = useContext(TotalContext);	
-	const [totalPrice] = totalHelper;
+    const {getTotalPrice, getRealData, goldPriceList} = useContext(TotalContext);	
+	//const [totalPrice] = totalHelper;
 
 	useEffect(() => {
 	getRealData();
@@ -18,9 +18,9 @@ const MainPage = () => {
 		return (
 			<div className="main-container">
 				{goldPriceList.list.map((gold, index) => (
-					<Input key={index} name={gold.name} price={gold.buying}  />
+					<Input index={index} key={index} name={gold.name} price={gold.buying}  />
 				))}
-			<div className="result-area">	<h3 className="total-gold-text" >Toplam Altın Değeri: <span className="total-gold-price">{totalPrice.toFixed(1)} ₺</span> </h3></div>
+			<div className="result-area">	<h3 className="total-gold-text" >Toplam Altın Değeri: <span className="total-gold-price">{getTotalPrice()} ₺</span> </h3></div>
 			</div>
 		);
 	}
